@@ -1,5 +1,6 @@
 package com.duban.itemsproyect;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         configurarListeners();
     }
 
+    @SuppressLint("WrongViewCast")
     void inicializarVistas() {
         switchPromocion = findViewById(R.id.switchPromocion);
         tvAgregarAsistentes = findViewById(R.id.tvAgregarAsistentes);
