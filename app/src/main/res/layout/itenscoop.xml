@@ -2,14 +2,14 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-
+    android:layout_width="400dp"
+    android:layout_height="300dp"
     app:cardCornerRadius="16dp"
     app:cardElevation="4dp"
     app:strokeWidth="1dp"
     app:strokeColor="#DDDDDD"
-    android:layout_marginTop="50dp">
+    android:layout_marginTop="50dp"
+    android:layout_marginLeft="6dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,7 +43,8 @@
             <Switch
                 android:id="@+id/switchPromocion"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                tools:ignore="TouchTargetSizeCheck" />
         </LinearLayout>
 
         <!-- Sección de agregar asistentes -->
@@ -120,11 +121,12 @@
                 android:id="@+id/btnCompartir"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/compar"
-                android:contentDescription="Compartir"
-                android:background="?attr/selectableItemBackgroundBorderless"
                 android:layout_marginEnd="8dp"
-                android:scaleType="fitCenter" />
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Compartir"
+                android:scaleType="fitCenter"
+                android:src="@drawable/compar"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <ImageButton
                 android:id="@+id/btnEditar"

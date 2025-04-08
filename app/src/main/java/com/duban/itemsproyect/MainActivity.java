@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Inicializa todas las vistas del layout
      */
+    @SuppressLint("WrongViewCast")
     void inicializarVistas() {
         switchPromocion = findViewById(R.id.switchPromocion);
         tvAgregarAsistentes = findViewById(R.id.tvAgregarAsistentes);
