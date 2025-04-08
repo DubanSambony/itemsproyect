@@ -1,6 +1,6 @@
 package com.duban.itemsproyect;
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -15,7 +15,6 @@ import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Componentes de UI
     Switch switchPromocion;
     TextView tvAgregarAsistentes;
     ImageView iconoAgregarAsistentes;
@@ -25,29 +24,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.itenscoop);
+        setContentView(R.layout.itenscoop); // Asegúrate que existe este XML
 
         inicializarVistas();
         configurarListeners();
     }
 
-    /**
-     * Inicializa todas las vistas del layout
-     */
-    @SuppressLint("WrongViewCast")
     void inicializarVistas() {
         switchPromocion = findViewById(R.id.switchPromocion);
         tvAgregarAsistentes = findViewById(R.id.tvAgregarAsistentes);
-        iconoAgregarAsistentes = findViewById(R.id.iconoAgregarAsistentes); // Ya es un ImageView
+        iconoAgregarAsistentes = findViewById(R.id.iconoAgregarAsistentes);
         btnVerDetalles = findViewById(R.id.btnVerDetalles);
         btnCompartir = findViewById(R.id.btnCompartir);
         btnEditar = findViewById(R.id.btnEditar);
         btnEliminar = findViewById(R.id.btnEliminar);
     }
 
-    /**
-     * Configura todos los listeners de la interfaz
-     */
     void configurarListeners() {
         configurarSwitchPromocion();
         configurarAgregarAsistentes();
@@ -57,16 +49,18 @@ public class MainActivity extends AppCompatActivity {
 
     void configurarSwitchPromocion() {
         switchPromocion.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            String mensaje = isChecked ? "Promoción activada" : "Promoción desactivada";
-            mostrarToast(mensaje);
+            if (isChecked) {
+                switchPromocion.setChecked(false); // Para que no quede activado al volver
+                Intent intent = new Intent(MainActivity.this, promocionada.class);
+                startActivity(intent);
+            } else {
+                mostrarToast("Promoción desactivada");
+            }
         });
     }
 
     void configurarAgregarAsistentes() {
-        View.OnClickListener listener = v -> {
-            mostrarToast("Agregar asistentes");
-        };
-
+        View.OnClickListener listener = v -> mostrarToast("Agregar asistentes");
         tvAgregarAsistentes.setOnClickListener(listener);
         iconoAgregarAsistentes.setOnClickListener(listener);
     }
