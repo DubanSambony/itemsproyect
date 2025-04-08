@@ -22,7 +22,7 @@ public class promocionada extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.activity_promocionada);
 
             tvTitulo = findViewById(R.id.tvTitulo);
             tvPromocionada = findViewById(R.id.tvPromocionada);

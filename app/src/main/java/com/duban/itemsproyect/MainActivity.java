@@ -1,6 +1,7 @@
 package com.duban.itemsproyect;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -57,8 +58,13 @@ public class MainActivity extends AppCompatActivity {
 
     void configurarSwitchPromocion() {
         switchPromocion.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            String mensaje = isChecked ? "Promoción activada" : "Promoción desactivada";
-            mostrarToast(mensaje);
+            if (isChecked) {
+                // Redirigir a la nueva pantalla
+                Intent intent = new Intent(MainActivity.this, promocionada.class);
+                startActivity(intent);
+            } else {
+                mostrarToast("Promoción desactivada");
+            }
         });
     }
 
