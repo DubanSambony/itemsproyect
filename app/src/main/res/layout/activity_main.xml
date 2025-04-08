@@ -1,0 +1,154 @@
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="#DDDDDD">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Título y switch -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvAgregarAsistentes"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Título de la actividad 1"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Promocionar"
+                android:textSize="14sp"
+                android:layout_marginEnd="4dp" />
+
+            <Switch
+                android:id="@+id/switchPromocion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="1dp">
+
+
+            <TextView
+                android:id="@+id/iconoAgregarAsistentes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Agregar asistentes"
+                android:textStyle="bold"
+                android:textColor="#009035"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/plus"
+                android:layout_marginLeft="5dp"
+
+                />
+
+        </LinearLayout>
+
+        <!-- Detalles en gris -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripción de la actividad 1"
+            android:textColor="#AAAAAA"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha: 2023-12-01"
+            android:textColor="#AAAAAA" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lugar: Lugar 2"
+            android:textColor="#AAAAAA" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Responsables: Responsable 1"
+            android:textColor="#AAAAAA" />
+
+        <!-- Agregar asistentes -->
+
+
+        <!-- Botón moderno -->
+        <Button
+            android:id="@+id/btnVerDetalles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ver Detalles"
+
+            android:layout_marginTop="12dp"
+            app:backgroundTint="#22C55E"
+            android:textColor="@android:color/white" />
+
+        <!-- Íconos de acción -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnCompartir"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/compar"
+                android:contentDescription="Compartir"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                />
+
+            <ImageButton
+                android:id="@+id/btnEditar"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/edit"
+                android:contentDescription="Editar"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                />
+
+            <ImageButton
+                android:id="@+id/btnEliminar"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/delete"
+                android:contentDescription="Eliminar"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitCenter"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
